@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+        Servicios
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel = "stylesheet" type ="text/css" th:href="@{css/style3.css}">  
+
+    
+
+  
+    
+ 
+  </head>
+   
+    
+  <section class="contenido">
+
+  <body style = "background-color:ghostwhite;">
+      <div class = "container-fluid"> <!--Contendrá la pag web-->
+        <div class="row">
+          <div class="col">
+            <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+                <a class="navbar-brand" href="#" id="logo">
+                    <img th:src="@{img/logo.jpg}" width="200px" height="60px">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/galeria">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reserva_hora">Reservar hora</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/seguimiento">Seguimiento</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Administracion</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <th:block th:unless="${session.usuarioLogueado==null}">
+                            <li class="nav-item dropdown float-right">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false"
+                                    th:text="${session.usuarioLogueado.getNombre()}">Dropdown</a>
+                                <div class="dropdown-menu">
+    
+                                    <form action="logout" method="post">
+                                        <input class="dropdown-item" type="submit" value="Cerrar Sesión">
+    
+                                    </form>
+                                </div>
+                            </li>
+                        </th:block>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Busqueda">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+                    </form>
+                </div>
+            </nav>
+          </div>
+        </div>
+          <br>
+          <br>
+          <br>
+        <div id="t3-mainbody" class="container t3-mainbody">
+          <div class="row">
+        
+                <div id="nuestro-taller" class="row pt-4">
+                        <div class="col">
+                            <h1 class="nuestro-taller1" > Nuestro Taller</h1>
+                            <h1 class="linea">_____________________________________________________________________</h1>
+        <div class="item-page clearfix">
+        
+        
+       
+  <!--e:Validate structured data-->
+
+	
+
+  <meta content="Servicios" itemprop="headline">
+	
+	
+	<!-- Aside -->
+		<!-- //Aside -->
+
+		<section class="article-contentclearfix" itemprop="articleBody">
+			<p>
+<div  data-uk-scrollspy="{target:'> div > [data-uk-scrollspy-cls]', delay:300}">
+
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/Transmision-automatica-ZF-8HP.jpg}" style="float: left"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h1">
+
+                                            Reparacion de Transmisiones Automaticas                    
+                    
+                </h3>
+                
+                                <div class="uk-margin"> Una transmisión automática o "caja automática" es una caja de cambios de automóviles u otro tipo de vehículos que puede encargarse por sí misma de cambiar la relación de cambio automáticamente a medida que el vehículo se mueve, liberando así al conductor de la tarea de cambiar de marcha manualmente.
+<br>
+
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <hr class="uk-grid-divider ">
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-float-right uk-flex-order-last-medium uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/alineacion-y-balanceo2.jpg}" style="float: right"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h2">
+
+                                            Alineamientos                  
+                    
+                </h3>
+                
+                                <div class="uk-margin2"> La alineación de las ruedas, consiste en ajustar los ángulos de las ruedas, de tal manera que queden conforme lo especifica el fabricante de tu vehículo. Por otro lado, el balanceo de las ruedas permite que estas últimas giren sin causar vibraciones innecesarias.
+
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <hr class="uk-grid-divider ">
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/scanner.jpg}" style="float: left"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h1">
+
+                                            Scanner                   
+                    
+                </h3>
+                
+                                <div class="uk-margin">El scanner automotriz es una herramienta empleada en el diagnóstico de las fallas registradas en el área electrónica de un auto específicamente en la computadora del mismo, computadora en la cual se manejan y detectan señales indebidas quedando registradas con un código de error.
+<br>
+
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <hr class="uk-grid-divider ">
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-float-right uk-flex-order-last-medium uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/embrague-e1534952357276.jpg}" style="float: right"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h2">
+
+                                            Embragues                   
+                    
+                </h3>
+                
+                                <div class="uk-margin2"> El embrague es un sistema que permite tanto transmitir como interrumpir la transmisión de una energía mecánica a su acción final de manera voluntaria. En un automóvil, por ejemplo, permite al conductor controlar la transmisión del par motor desde el motor hacia las ruedas.
+<br>
+
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <hr class="uk-grid-divider ">
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/cambiodeaceite.jpg}" style="float: left"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h1">
+
+                                            Cambio de aceite                    
+                    
+                </h3>
+                
+            <div class="uk-margin">El aceite sucio no lubrica de la mejor manera, aumenta la fricción, la temperatura de funcionamiento y hace que el motor se desgaste con más rapidez. Aún los aceites sintéticos son propensos a la contaminación, por lo que no hace que se extiendan los períodos entre los servicios mecánicos. Si cambia el aceite de manera frecuente, se puede obtener el doble de rendimiento de un motor bueno que si no lo hiciera.
+<br>
+
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+    
+
+    <hr class="uk-grid-divider ">
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/mecanica.jpg}" style="float: right"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h2">
+
+                                            Mecánica general                    
+                    
+                </h3>
+                
+                                <div class="uk-margin2">Contamos con un servicio de Mecánica General que cubre los requerimientos básicos de su vehículo. Realizamos las reparaciones necesarias con el más alto nivel de calidad al mejor precio y con un excelente tiempo de entrega.
+<br>
+
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <hr class="uk-grid-divider ">
+
+    
+    <div class="uk-grid uk-text-left uk-flex-middle" data-uk-grid-match data-uk-margin="{cls:'uk-margin-top'}">
+
+                <div class="uk-width-medium-1-2 uk-text-center uk-float-right uk-flex-order-last-medium uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-right uk-invisible">
+            <div class="uk-overlay uk-overlay-hover "><img th:src="@{img/galeria/frenos2-1.png}" style="float: left"; class=" uk-overlay-scale" ><div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div></div>        </div>
+        
+                <div class="uk-width-medium-1-2 uk-invisible"  data-uk-scrollspy-cls="uk-animation-slide-left uk-invisible">
+            <div class="uk-panel uk-panel-space uk-width-1-1">
+
+                
+                                <h3 class="uk-h1">
+
+                                            Servicio de frenos                    
+                    
+                </h3>
+                
+                                <div class="uk-margin">La principal misión que tiene el sistema de frenos de tu vehículo es detenerlo, y para eso está compuesto por dos tipos de frenos: los delanteros, que hacen entre el 60% y 80% de la fuerza total al momento de ser accionados y los traseros. Ambos, dependiendo del modelo del automóvil, están compuestos por pastillas o balatas y tambores de freno.
+<br>
+
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+
+  
+    
+
+</div>
+</p> 		</section>
+
+<h1 class="_">_______________________________________________________________</h1>
+    
+    <h1 id="titulo">Medios de pagos</h1>
+    <br>
+    <br>
+         
+<div id="general">
+    <div id="contenedor1">
+        <img th:src="@{img/medios/pago-en-efectivo-negro.jpg}" alt="mi imagen" width=60% height=60%>
+    </div>
+    <div id="contenedor2">
+        <img th:src="@{img/medios/Medios-de-Pago.jpg}" alt="mi imagen" width=60% height=60%>
+    </div>
+    <div id="contenedor3">
+        <img th:src="@{img/medios/transferencia-bancaria-negro.jpg}" alt="mi imagen" width=60% height=60%>
+    </div>
+</div>
+<div id="publicidad" class="publicidad">
+    <h1 id="titulo2" >Publicidad</h1>
+
+    <li><a href="#img1"><img th:src=" @{img/galeria/logo casayauto vehiculo_transparente.png}" alt=""></a></li>
+        <li><a href="#img2"><img th:src="@{img/galeria/CTT_logo.png}" alt=""></a></li>
+    
+</div>
+<br>
+<h1 id="titulo">Contactos</h1>
+<h1 id="textoservicio">Escribenos un mensaje directo o contactanos vía whatsapp o correo electrónico.</h1>
+<div id="contactogeneral">
+    <div id="c1">
+        <div id="whatsapp">
+            <img th:src="@{img/contactos/whatsapp.jpg}" alt="mi imagen" width=200px height=200px>
+            <h1 id="textoservicio">(+569)95202795</h1>
+        </div>
+       
+    </div>
+    <div id="c1">
+        <div id="gmail">
+            <img th:src="@{img/contactos/gmail.jpg}" alt="mi imagen" width=200px height=200px>
+            <h1 id="textoservicio">juanhenriquezcarpo@gmail.com</h1>
+        </div>
+       
+        </div>
+
+    </div>
+</div>
+            
+          
+        
+           
+          
+           
+      </div>
+      
+      </div>
+    </div>
+      </div>
+
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+   
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>
+        Taller mecanico
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+</head>
+
+<body style="background-color:ghostwhite;">
+    <div class="container-fluid">
+        <!--Contendrá la pag web-->
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" id="logo">
+                <img th:src="@{img/logo.jpg}" width="200px" height="60px">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="../index2">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index2/servicios2">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index2/galeria2">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index2/agenda">Agenda</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index2/vehiculos">Vehículos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index2/clientes">Clientes</a>
+                    </li>
+
+                </ul>
+
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <th:block th:unless="${session.usuarioLogueado==null}">
+                        <li class="nav-item dropdown float-right">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false"
+                                th:text="${session.usuarioLogueado.getNombre()}">Dropdown</a>
+                            <div class="dropdown-menu">
+
+                                <form action="logout" method="post">
+                                    <input class="dropdown-item" type="submit" value="Cerrar Sesión">
+
+                                </form>
+                            </div>
+                        </li>
+                    </th:block>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Busqueda">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+                </form>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        
+    </div>
+    <br>
+    <div id="reserva_general" class="row justify-content-center">
+        <div id="reserva_auto" class="row m-4 justify-content-center">
+            <li class="blk blk-1" style="height: 304px;">
+                <h3 class="blk-titulo dblock"><span class="paso-nro"></span> Ingresa datos del auto</h3>
+                <br>
+                <div class="blk-contenido">
+
+                    <div class="container">
+                        <form action="" th:action="@{/index2/vehiculos/crearVh}" method="post" th:object="${nuevoVehiculo}">
+
+                            <div class="form-group">
+                                <label for="">Patente:</label>
+                                <input type="text" class="form-control" width="50%" size="50" name="" id=""
+                                    aria-describedby="helpId" placeholder="" th:field="*{patente}">
+
+
+                                <label for="">Marca:</label>
+                                <input type="text" class="form-control" width="50%" size="50" name="" id=""
+                                    aria-describedby="helpId" placeholder="" th:field="*{marca}">
+
+
+
+                                <label for="">Modelo:</label>
+                                <input type="text" class="form-control" width="50%" size="50" name="" id=""
+                                    aria-describedby="helpId" placeholder="" th:field="*{modelo}">
+
+                                <label for="">Año:</label>
+                                <input type="text" class="form-control" width="50%" size="50" name="" id=""
+                                    aria-describedby="helpId" placeholder="" th:field="*{anio}">
+
+
+                                <label for="">Motivo de visita al taller:</label>
+                                <div class="form-group">
+
+                                    <select type="text" class="form-control" name="" id="" th:field="*{comentario}">
+
+                                        <option th:text="'Cambio de aceite'" th:value="'Cambio de aceite'"></option>
+                                        <option th:text="'Filtro de aire'" th:value="'Filtro de aire'"></option>
+                                        <option th:text="'Filtro de aceite'" th:value="'Filtro de aceite'"></option>
+                                        <option th:text="'Desconocido'" th:value="'Desconocido'"></option>
+                                        <option th:text="'Otro'" th:value="'Otro'"></option>
+
+                                    </select>
+
+                                </div>
+
+                                <label for="">Dueño:</label>
+
+                                <div class="form-group">
+
+                                    <select type="text" class="form-control" name="" id=""
+                                        th:field="*{clienteByIdCliente}">
+
+                                        <option th:each="c : ${listaClientes}" th:text="${c.toString()}"
+                                            th:value="${c.getIdCliente()}"></option>
+
+                                    </select>
+
+                                </div>
+
+
+                            </div>
+
+                            <br>
+                            <button id="btn" type="submit" class="btn btn-success">Agregar Vehiculo</button>
+                            <br>
+                            <br>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+            </li>
+        </div>
+
+        <br>
+        <br>
+
+
+
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

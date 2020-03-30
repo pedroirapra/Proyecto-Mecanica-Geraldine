@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>
+        Taller mecanico
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+</head>
+
+<body style="background-color:ghostwhite;">
+    <div class="container-fluid">
+        <!--Contendrá la pag web-->
+        <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" id="logo">
+                <img th:src="@{img/logo.jpg}" width="200px" height="60px">
+            </a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/galeria">Galeria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reserva_hora">Reservar hora</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/seguimiento">Seguimiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Administracion</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <th:block th:unless="${session.usuarioLogueado==null}">
+                        <li class="nav-item dropdown float-right">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false"
+                                th:text="${session.usuarioLogueado.getNombre()}">Dropdown</a>
+                            <div class="dropdown-menu">
+
+                                <form action="logout" method="post">
+                                    <input class="dropdown-item" type="submit" value="Cerrar Sesión">
+
+                                </form>
+                            </div>
+                        </li>
+                    </th:block>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Busqueda">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+                </form>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 id="titulo">Reserva de hora: Fecha
+    </div>
+    <br>
+    <div id="reserva_general2" class="row justify-content-center">
+        <div id="reserva_fecha" class="row m-4 justify-content-center">
+            <li class="blk blk-1" style="height: 304px;">
+                <h3 class="blk-titulo dblock"><span class="paso-nro"></span> Ingresa el día y hora que quieres solicitar
+                </h3>
+                <br>
+                <div class="blk-contenido">
+
+                    <div class="container">
+                        <form action="" th:action="@{/reserva_hora3}" method="post" th:object="${nuevoRegistro}">
+
+                            <label for="">Hora:</label>
+                            <div class="form-group">
+
+                                <!--  -->
+
+                                <select type="text" class="form-control" name="" id="" th:field="*{hora}">
+
+                                    <option th:text="'9:00'" th:value="'9:00'"></option>
+                                    <option th:text="'9:30'" th:value="'9:30'"></option>
+                                    <option th:text="'10:00'" th:value="'10:00'"></option>
+                                    <option th:text="'10:30'" th:value="'10:30'"></option>
+                                    <option th:text="'11:00'" th:value="'11:00'"></option>
+                                    <option th:text="'11:30'" th:value="'11:30'"></option>
+                                    <option th:text="'12:00'" th:value="'12:00'"></option>
+                                    <option th:text="'12:30'" th:value="'12:30'"></option>
+                                    <option th:text="'15:00'" th:value="'15:00'"></option>
+                                    <option th:text="'15:30'" th:value="'15:30'"></option>
+                                    <option th:text="'16:00'" th:value="'16:00'"></option>
+                                    <option th:text="'16:30'" th:value="'16:30'"></option>
+                                    <option th:text="'17:00'" th:value="'17:00'"></option>
+                                    <option th:text="'17:30'" th:value="'17:30'"></option>
+                                    <option th:text="'18:00'" th:value="'18:00'"></option>
+                                    <option th:text="'18:30'" th:value="'18:30'"></option>
+
+                                </select>
+
+                            </div>
+                            <label for="">Dia:</label>
+                            <div class="form-group">
+
+                                <!--  th:field="*{dia}"-->
+
+                                <select type="text" class="form-control" name="" id="" th:field="*{dia}">
+
+                                    <option th:text="'1'" th:value="'1'"></option>
+                                    <option th:text="'2'" th:value="'2'"></option>
+                                    <option th:text="'3'" th:value="'3'"></option>
+                                    <option th:text="'4'" th:value="'4'"></option>
+                                    <option th:text="'5'" th:value="'5'"></option>
+                                    <option th:text="'6'" th:value="'6'"></option>
+                                    <option th:text="'7'" th:value="'7'"></option>
+                                    <option th:text="'8'" th:value="'8'"></option>
+                                    <option th:text="'9'" th:value="'9'"></option>
+                                    <option th:text="'10'" th:value="'10'"></option>
+                                    <option th:text="'11'" th:value="'11'"></option>
+                                    <option th:text="'12'" th:value="'12'"></option>
+                                    <option th:text="'13'" th:value="'13'"></option>
+                                    <option th:text="'14'" th:value="'14'"></option>
+                                    <option th:text="'15'" th:value="'15'"></option>
+                                    <option th:text="'16'" th:value="'16'"></option>
+                                    <option th:text="'17'" th:value="'17'"></option>
+                                    <option th:text="'18'" th:value="'18'"></option>
+                                    <option th:text="'19'" th:value="'19'"></option>
+                                    <option th:text="'20'" th:value="'20'"></option>
+                                    <option th:text="'21'" th:value="'21'"></option>
+                                    <option th:text="'22'" th:value="'22'"></option>
+                                    <option th:text="'23'" th:value="'23'"></option>
+                                    <option th:text="'24'" th:value="'24'"></option>
+                                    <option th:text="'25'" th:value="'25'"></option>
+                                    <option th:text="'26'" th:value="'26'"></option>
+                                    <option th:text="'27'" th:value="'27'"></option>
+                                    <option th:text="'28'" th:value="'28'"></option>
+                                    <option th:text="'29'" th:value="'29'"></option>
+                                    <option th:text="'30'" th:value="'30'"></option>
+                                    <option th:text="'31'" th:value="'31'"></option>
+
+
+                                </select>
+
+                            </div>
+
+                            <label for="">Mes:</label>
+                            <div class="form-group">
+
+                                <!--  th:field="*{mes}"-->
+
+                                <select type="text" class="form-control" name="" id="" th:field="*{mes}">
+
+                                    <option th:text="'Enero'" th:value="'Enero'"></option>
+                                    <option th:text="'Febrero'" th:value="'Febrero'"></option>
+                                    <option th:text="'Marzo'" th:value="'Marzo'"></option>
+                                    <option th:text="'Abril'" th:value="'Abril'"></option>
+                                    <option th:text="'Mayo'" th:value="'Mayo'"></option>
+                                    <option th:text="'Junio'" th:value="'Junio'"></option>
+                                    <option th:text="'Julio'" th:value="'Julio'"></option>
+                                    <option th:text="'Agosto'" th:value="'Agosto'"></option>
+                                    <option th:text="'Septiembre'" th:value="'Septiembre'"></option>
+                                    <option th:text="'Octubre'" th:value="'Octubre'"></option>
+                                    <option th:text="'Noviembre'" th:value="'Noviembre'"></option>
+                                    <option th:text="'Diciembre'" th:value="'Diciembre'"></option>
+
+
+
+                                </select>
+
+                            </div>
+                            <label for="">Año:</label>
+                            <div class="form-group">
+
+                                <!--  th:field="*{anio}"-->
+
+                                <select type="text" class="form-control" name="" id="" th:field="*{anio}">
+
+                                    <option th:text="'2020'" th:value="'2020'"></option>
+                                    <option th:text="'2021'" th:value="'2021'"></option>
+                                    <option th:text="'2022'" th:value="'2022'"></option>
+                                    <option th:text="'2023'" th:value="'2023'"></option>
+                                    <option th:text="'2024'" th:value="'2024'"></option>
+                                    <option th:text="'2025'" th:value="'2025'"></option>
+                                    <option th:text="'2026'" th:value="'2026'"></option>
+                                    <option th:text="'2027'" th:value="'2027'"></option>
+                                    <option th:text="'2028'" th:value="'2028'"></option>
+                                    <option th:text="'2029'" th:value="'2029'"></option>
+                                    <option th:text="'2030'" th:value="'2030'"></option>
+                                    <option th:text="'2031'" th:value="'2031'"></option>
+                                    <option th:text="'2032'" th:value="'2032'"></option>
+                                    <option th:text="'2033'" th:value="'2033'"></option>
+                                    <option th:text="'2034'" th:value="'2034'"></option>
+                                    <option th:text="'2035'" th:value="'2035'"></option>
+                                    <option th:text="'2036'" th:value="'2036'"></option>
+                                    <option th:text="'2037'" th:value="'2037'"></option>
+                                    <option th:text="'2038'" th:value="'2038'"></option>
+                                    <option th:text="'2039'" th:value="'2039'"></option>
+                                    <option th:text="'2040'" th:value="'2040'"></option>
+
+                                </select>
+
+                            </div>
+
+                            <label for="">Vehiculo:</label>
+
+                            <div class="form-group">
+
+                                <select type="text" class="form-control" name="" id=""
+                                    th:field="*{vehiculoByIdVehiculo}">
+
+                                    <option th:each="v : ${listaVehiculos}"
+                                        th:text="${v.toString()}+' - '+${v.getClienteByIdCliente().toString()}"
+                                        th:value="${v.getIdVehiculo()}"></option>
+
+                                </select>
+
+                                <label for="">Estado:</label>
+                                <div class="form-group">
+
+                                    <select type="text" class="form-control" name="" id="" th:field="*{estado}">
+    
+                                        <option th:text="'pendiente'" th:value="'pendiente'"></option>
+                                       
+                   
+                                    </select>
+    
+                                </div>
+
+                                <label for="">Codigo:</label>
+                                <div class="form-group">
+
+                                    <select type="text" class="form-control" name="" id="" th:field="*{codigo}">
+    
+                                        <option th:text="Automático" th:value="${nuevoRegistro.generarCodigo()}"></option>
+                                       
+                   
+                                    </select>
+    
+                                </div>
+                                <br>
+                            </div>
+                            <button id="btn" type="submit" class="btn btn-success">Solicitar atencion</button>
+                            <small> *Recibirá un correo con la respuesta a su solicitud</small>
+
+                    </div>
+
+                    </form>
+
+                </div>
+
+        </div>
+
+
+        </li>
+    </div>
+
+    <div id="final">
+        <h1 id="titulo2"></h1>
+        <h1 id="texto2">Mecánica Geraldine, Temuco</h1>
+    </div>
+
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

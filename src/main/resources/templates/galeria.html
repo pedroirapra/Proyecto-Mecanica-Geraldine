@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+        Galeria
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel = "stylesheet" type ="text/css" th:href="@{css/style3.css}"> 
+    
+      
+
+ </head>
+  <body style = "background-color:ghostwhite;">
+      <div class = "container-fluid"> <!--Contendrá la pag web-->
+        <div class="row">
+          <div class="col1">
+            <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+              <a class="navbar-brand" href="#" id="logo">
+                <img th:src="@{img/logo.jpg}" width="200px" height="60px">
+              </a>
+              <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                  data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavId">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      <li class="nav-item active">
+                          <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/servicios">Servicios</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/galeria">Galeria</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/reserva_hora">Reservar hora</a>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/seguimiento">Seguimiento</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/login">Administracion</a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      <th:block th:unless="${session.usuarioLogueado==null}">
+                          <li class="nav-item dropdown float-right">
+                              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                  aria-haspopup="true" aria-expanded="false"
+                                  th:text="${session.usuarioLogueado.getNombre()}">Dropdown</a>
+                              <div class="dropdown-menu">
+  
+                                  <form action="logout" method="post">
+                                      <input class="dropdown-item" type="submit" value="Cerrar Sesión">
+  
+                                  </form>
+                              </div>
+                          </li>
+                      </th:block>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Busqueda">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busqueda</button>
+                  </form>
+              </div>
+          </nav>
+          <!--nav son botones que salen en la parte superior de la pag web-->
+          </div>
+        </div>
+          <br>
+          <br>
+
+          <div id="nuestro-taller" class="row pt-4">
+            <div class="col">
+                <h1 class="nuestro-taller1" > Nuestro Taller</h1>
+                <h1 class="linea">_____________________________________________________________________</h1>
+                          
+
+                       <ul class="galeria">
+                         <li><a href="#img1"><img th:src="@{img/galeria/1f735653-0cd5-4e44-add2-004a737d6a8a.JPG}" alt=""></a></li>
+                         <li><a href="#img2"><img th:src="@{img/galeria/76b14712-2b0e-4ff2-beef-8d1e6d276ad2.JPG}" alt=""></a></li>
+                         <li><a href="#img3"><img th:src="@{img/galeria/e2952f35-099c-48e6-aa7b-bb6a6dc919bf.JPG}" alt=""></a></li>
+                         <li><a href="#img4"><img th:src="@{img/galeria/98baa287-c334-4798-a4d4-41b99beb4b89.JPG}" alt=""></a></li>
+                         <li><a href="#img5"><img th:src="@{img/galeria/e5ee9a64-2023-41de-9da9-55392d6f28a6.JPG}" alt=""></a></li>
+                         <li><a href="#img6"><img th:src="@{img/galeria/136a3413-f43d-46f9-a95e-97dfd41a433c.JPG}" alt=""></a></li>
+                         <li><a href="#img7"><img th:src="@{img/galeria/957721e4-c10c-498e-99d5-b1fed636149b.JPG}" alt=""></a></li>
+                         <li><a href="#img8"><img th:src="@{img/galeria/27b54e96-0916-4d28-b0d9-1ac4850b57e8.JPG}" alt=""></a></li>
+                         <li><a href="#img9"><img th:src="@{img/galeria/d01e288a-0c27-4a09-ac4c-7d9ef8275e85.JPG}" alt=""></a></li>
+
+
+                       <div class="modal" id="img1">
+                            <div class="imagen1"> 
+                             <a href="#img9">&#60;</a>
+                             <a href=""><img th:src="@{img/galeria/1f735653-0cd5-4e44-add2-004a737d6a8a.JPG}" ></a>
+                             <a href="#img2">></a>
+                             
+                            </div>
+                             <a  class="cerrar" href="">X</a>
+                           </div>
+
+                           <div class="modal" id="img2">
+                              <div class="imagen1"> 
+                               <a href="#img1">&#60;</a>
+                               <a href=""><img th:src="@{img/galeria/76b14712-2b0e-4ff2-beef-8d1e6d276ad2.JPG}" ></a>
+                               <a href="#img3">></a>
+                               
+                              </div>
+                               <a  class="cerrar" href="">X</a>
+                             </div>
+
+                             <div class="modal" id="img3">
+                                <div class="imagen1"> 
+                                 <a href="#img2">&#60;</a>
+                                 <a href=""><img th:src="@{img/galeria/e2952f35-099c-48e6-aa7b-bb6a6dc919bf.JPG}" ></a>
+                                 <a href="#img4">></a>
+                                 
+                                </div>
+                                 <a  class="cerrar" href="">X</a>
+                               </div>
+
+                               <div class="modal" id="img4">
+                                  <div class="imagen1"> 
+                                   <a href="#img3">&#60;</a>
+                                   <a href=""><img th:src="@{img/galeria/98baa287-c334-4798-a4d4-41b99beb4b89.JPG}" ></a>
+                                   <a href="#img5">></a>
+                                   
+                                  </div>
+                                   <a  class="cerrar" href="">X</a>
+                                 </div>
+
+
+                                 <div class="modal" id="img5">
+                                    <div class="imagen1"> 
+                                     <a href="#img4">&#60;</a>
+                                     <a href=""><img th:src="@{img/galeria/e5ee9a64-2023-41de-9da9-55392d6f28a6.JPG}" ></a>
+                                     <a href="#img6">></a>
+                                     
+                                    </div>
+                                     <a  class="cerrar" href="">X</a>
+                                   </div>
+
+
+                                   <div class="modal" id="img6">
+                                      <div class="imagen1"> 
+                                       <a href="#img5">&#60;</a>
+                                       <a href=""><img th:src="@{img/galeria/136a3413-f43d-46f9-a95e-97dfd41a433c.JPG}" ></a>
+                                       <a href="#img7">></a>
+                                       
+                                      </div>
+                                       <a  class="cerrar" href="">X</a>
+                                     </div>
+                  
+
+                                     <div class="modal" id="img7">
+                                        <div class="imagen1"> 
+                                         <a href="#img6">&#60;</a>
+                                         <a href=""><img th:src="@{img/galeria/957721e4-c10c-498e-99d5-b1fed636149b.JPG}" ></a>
+                                         <a href="#img8">></a>
+                                         
+                                        </div>
+                                         <a  class="cerrar" href="">X</a>
+                                       </div>
+ 
+                                       <div class="modal" id="img8">
+                                          <div class="imagen1"> 
+                                           <a href="#img7">&#60;</a>
+                                           <a href=""><img th:src="@{img/galeria/27b54e96-0916-4d28-b0d9-1ac4850b57e8.JPG}" ></a>
+                                           <a href="#img9">></a>
+                                           
+                                          </div>
+                                           <a  class="cerrar" href="">X</a>
+                                         </div>
+
+                                         <div class="modal" id="img9">
+                                            <div class="imagen1"> 
+                                             <a href="#img8">&#60;</a>
+                                             <a href=""><img th:src="@{img/galeria/d01e288a-0c27-4a09-ac4c-7d9ef8275e85.JPG}" ></a>
+                                             <a href="#img1">></a>
+                                             
+                                            </div>
+                                             <a  class="cerrar" href="">X</a>
+                                           </div>
+                          </ul>
+                        
+                        </div>
+                           
+                          </div>
+
+                          <h1 class="linea">_____________________________________________________________________</h1>
+
+                          <h1 id="titulo">Medios de pagos</h1>
+    <br>
+    <br>
+    <div id="general">
+        <div id="contenedor1">
+            <img th:src="@{img/medios/pago-en-efectivo-negro.jpg}" alt="mi imagen" width=60% height=60%>
+        </div>
+        <div id="contenedor2">
+            <img th:src="@{img/medios/Medios-de-Pago.jpg}" alt="mi imagen" width=60% height=60%>
+        </div>
+        <div id="contenedor3">
+            <img th:src="@{img/medios/transferencia-bancaria-negro.jpg}" alt="mi imagen" width=60% height=60%>
+        </div>
+    </div>
+    <div id="publicidad" class="publicidad">
+        <h1 id="titulo2" >Publicidad</h1>
+        <li><a href="#img1"><img th:src="@{img/galeria/logo casayauto vehiculo_transparente.png}" alt=""></a></li>
+        <li><a href="#img2"><img th:src="@{img/galeria/CTT_logo.png}" alt=""></a></li>
+    </div>
+    <br>
+    <br>
+    <div class="contacto">
+    <h1 id="titulo" class="contacto">Contactos</h1>
+    <h1 id="textoservicio">Escribenos un mensaje directo o contactanos vía whatsapp o correo electrónico.</h1>
+    <div id="contactogeneral">
+        <div id="c1">
+            <div id="whatsapp">
+                <img th:src="@{img/contactos/whatsapp.jpg}" alt="mi imagen" width=200px height=200px>
+                <h1 id="textoservicio">(+569)95202795</h1>
+            </div>
+           
+        </div>
+        <div id="c1">
+            <div id="gmail">
+                <img th:src="@{img/contactos/gmail.jpg}" alt="mi imagen" width=200px height=200px>
+                <h1 id="textoservicio">juanhenriquezcarpo@gmail.com</h1>
+            </div>
+           
+            </div>
+    
+        </div>
+    </div>
+    <div>
+            <h1 id = "titulo">Ubicacion</h1>
+            <br>
+        <div class="col medium-6 small-12 large-6">
+            <div class="col-inner text-center">
+                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.833929114117!2d-72.58989828465411!3d-38.744572979594544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614d3df65586779%3A0x6c3fde8b114f1549!2sServicio%20Disel%20Common%20Raid!5e0!3m2!1ses-419!2scl!4v1585532417458!5m2!1ses-419!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <p>
+                    <h3>Horario de atención</h3>
+                    <p>Lunes a Viernes: 9:00 a 13:00 – 15:00 a 19:00</p>
+            </div>
+        </div>
+    </div>
+           
+          
+           
+      </div>
+      
+      </div>
+    </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
